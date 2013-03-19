@@ -8,12 +8,17 @@ Gem::Specification.new do |gem|
   gem.version       = Employer::Activerecord::VERSION
   gem.authors       = ["Mark Kremer"]
   gem.email         = ["mark@without-brains.net"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.summary       = %q{ActiveRecord backend for Employer}
+  gem.license       = "MIT"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_runtime_dependency "employer", "~> 0.3"
+  gem.add_runtime_dependency "activerecord", "~> 3.2"
+
+  gem.add_development_dependency "rspec"
+  gem.add_development_dependency "pry"
 end
