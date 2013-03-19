@@ -1,6 +1,6 @@
-# Employer::Activerecord
+# Employer::ActiveRecord [![Build Status](https://travis-ci.org/mkremer/employer-activerecord.png)](https://travis-ci.org/mkremer/employer-activerecord)
 
-TODO: Write a gem description
+ActiveRecord backend for Employer
 
 ## Installation
 
@@ -18,7 +18,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Ensure that your Employer configuration starts with something like the below:
+
+```ruby
+require "./config/environment.rb"
+require "employer-activerecord"
+
+pipeline_backend Employer::ActiveRecord::Pipeline.new
+```
+
+If you're not using Rails then require whatever sets up your application's
+environment instead of config/environment.rb before requiring 
+employer-activerecord. 
 
 ## Contributing
 
