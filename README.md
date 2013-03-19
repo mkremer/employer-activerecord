@@ -18,6 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
+Generate and run the migration to create the employer\_jobs tablein your
+database:
+
+```
+rails g employer:active_record
+bundle exec rake db:migrate
+```
+
 Ensure that your Employer configuration starts with something like the below:
 
 ```ruby
