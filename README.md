@@ -1,5 +1,7 @@
 # Employer::ActiveRecord [![Build Status](https://travis-ci.org/mkremer/employer-activerecord.png)](https://travis-ci.org/mkremer/employer-activerecord)
 
+NOTE: This code is still experimental
+
 ActiveRecord backend for Employer
 
 ## Installation
