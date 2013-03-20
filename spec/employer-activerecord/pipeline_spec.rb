@@ -21,9 +21,17 @@ describe Employer::ActiveRecord::Pipeline do
 
   describe "#dequeue" do
     it "locks a job from the database and returns it as a job hash" do
-      job = Employer::ActiveRecord::Job.create!(state: :free, type: "TestJob", properties: {shape: "Triangle", color: "Green"}.to_json)
-      job_hash = {id: job.id, class: "TestJob", attributes: {"shape" => "Triangle", "color" => "Green"}}
+      locked_job = Employer::ActiveRecord::Job.create!(created_at: 2.days.ago, state: :locked, type: "TestJob", properties: {shape: "Circle", color: "Red"}.to_json)
+      free_job1 = Employer::ActiveRecord::Job.create!(created_at: 1.day.ago, state: :free, type: "TestJob", properties: {shape: "Triangle", color: "Green"}.to_json)
+      free_job2 = Employer::ActiveRecord::Job.create!(state: :free, type: "TestJob", properties: {shape: "Square", color: "Yellow"}.to_json)
+
+      job_hash = {id: free_job1.id, class: "TestJob", attributes: {"shape" => "Triangle", "color" => "Green"}}
       pipeline.dequeue.should eq(job_hash)
+
+      job_hash = {id: free_job2.id, class: "TestJob", attributes: {"shape" => "Square", "color" => "Yellow"}}
+      pipeline.dequeue.should eq(job_hash)
+
+      pipeline.dequeue.should be_nil
     end
   end
 
