@@ -1,5 +1,5 @@
 module Employer
-  module Activerecord
-    VERSION = "0.1"
+  module ActiveRecord
+    VERSION = "0.1.1"
   end
 end

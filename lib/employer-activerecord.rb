@@ -1,7 +1,6 @@
 require "employer-activerecord/version"
 
 module Employer
-  module Activerecord
-    # Your code goes here...
+  module ActiveRecord
   end
 end

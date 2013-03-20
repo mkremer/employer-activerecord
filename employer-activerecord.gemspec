@@ -5,7 +5,7 @@ require 'employer-activerecord/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "employer-activerecord"
-  gem.version       = Employer::Activerecord::VERSION
+  gem.version       = Employer::ActiveRecord::VERSION
   gem.authors       = ["Mark Kremer"]
   gem.email         = ["mark@without-brains.net"]
   gem.summary       = %q{ActiveRecord backend for Employer}
