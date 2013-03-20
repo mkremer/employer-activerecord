@@ -1,6 +1,3 @@
 require "employer-activerecord/version"
-
-module Employer
-  module ActiveRecord
-  end
-end
+require "employer-activerecord/job"
+require "employer-activerecord/pipeline"
